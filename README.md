@@ -2,6 +2,7 @@
 <br/>
 
 Kyle Gaulton, kgaulton@ucsd.edu
+
 Fall 2019
 
 ##  Getting started
