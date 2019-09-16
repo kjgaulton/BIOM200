@@ -38,8 +38,8 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 
 From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' tag)
 
-**Question**: What gene(s) are rare pathogenic variants in, and what diseases do these variants cause?  
+**Question**: What rare pathogenic variants does this individual carry? What genes are they in and what diseases do these variants cause?  
 
-
+<br/><br/>
 #### Exercise - identify genes and pathways enriched in GWAS summary statistic data
 ***
