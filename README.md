@@ -1,11 +1,17 @@
 #### BIOM200 Human genetics and genomics module
 
+
+
 Kyle Gaulton, kgaulton@ucsd.edu
 Fall 2019
+
 
 Clone this repository into your home directory, i.e.:
 
 ```git clone https://github.com/kjgaulton/BIOM200.git```
+
+
+
 
 ##### Exercise - prioritize clinically-significant variants from a human exome
 
