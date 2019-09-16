@@ -34,12 +34,11 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 
   ```./vcfanno biom_config.toml hu82436A.vcf.gz > hu82436A.annot.vcf```
   
-- This will add several columns to the INFO field of the VCF, including: clinical_significance (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), af_exac (allele frequency in ExAC)
+- This will add several columns to the INFO field of the VCF, including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
-- From this annotated VCF, find all variants with clinical_significance=Pathogenic, and no af_exac value (meaning is it not present in ExAC)
+From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' tag)
 
-- What gene(s) are these variants in, and by searching the variant ID online what diseases do they cause?  
-
+**Question**: What gene(s) are rare pathogenic variants in, and what diseases do these variants cause?  
 
 
 #### Exercise - identify genes and pathways enriched in GWAS summary statistic data
