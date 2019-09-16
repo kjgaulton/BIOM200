@@ -10,7 +10,7 @@ Clone this repository into your home directory, i.e.:
 
 ```git clone https://github.com/kjgaulton/BIOM200.git```
 
-
+<br/><br/><br/><br/>
 
 
 ##### Exercise - prioritize clinically-significant variants from a human exome
