@@ -4,6 +4,7 @@
 Kyle Gaulton, kgaulton@ucsd.edu
 
 Fall 2019
+<br/>
 
 ##  Getting started
 
