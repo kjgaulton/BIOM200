@@ -1,9 +1,9 @@
 ## BIOM200 Human genetics and genomics module
 <br/>
-
 Kyle Gaulton, kgaulton@ucsd.edu
 Fall 2019
 
+##  Getting started
 
 Clone this repository into your home directory on TSCC, i.e.:
 
