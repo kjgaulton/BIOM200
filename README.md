@@ -1,11 +1,11 @@
 ## BIOM200 Human genetics and genomics module
 <br/>
 
-Kyle Gaulton
+Kyle Gaulton, Assistant Professor, Department of Pediatrics
 
 kgaulton@ucsd.edu
 
-Fall 2019
+Fall Quarter 2019
 
 <br/><br/>
 
