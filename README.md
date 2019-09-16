@@ -12,8 +12,7 @@ Clone this repository into your home directory on TSCC, i.e.:
 <br/><br/>
 
 
-#### Exercise - prioritize clinically-significant variants from a human exome
-***
+## Exercise - prioritize clinically-significant variants from a human exome
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
@@ -41,5 +40,5 @@ From this annotated VCF, find all variants with clinical_impact=Pathogenic, and 
 **Question**: How many rare, likely pathogenic variants does this individual carry? What genes are they in and what diseases do these variants cause?  
 
 <br/><br/>
-#### Exercise - identify genes and pathways enriched in GWAS summary statistic data
+## Exercise - identify genes and pathways enriched in GWAS summary statistic data
 ***
