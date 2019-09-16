@@ -1,6 +1,6 @@
 #### BIOM200 Human genetics and genomics module
 
-
+<br/><br/>
 
 Kyle Gaulton, kgaulton@ucsd.edu
 Fall 2019
@@ -10,10 +10,11 @@ Clone this repository into your home directory, i.e.:
 
 ```git clone https://github.com/kjgaulton/BIOM200.git```
 
-<br/><br/><br/><br/>
+<br/><br/>
 
 
 ##### Exercise - prioritize clinically-significant variants from a human exome
+***
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
@@ -43,3 +44,4 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 
 
 ##### Exercise - identify genes and pathways enriched in GWAS summary statistic data
+***
