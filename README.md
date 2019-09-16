@@ -1,4 +1,4 @@
-### BIOM200 Human genetics and genomics module
+## BIOM200 Human genetics and genomics module
 <br/>
 
 Kyle Gaulton, kgaulton@ucsd.edu
