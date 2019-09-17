@@ -80,9 +80,14 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
   plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars
   ```
   
-- Format PLINK output file to sorted .bed file:
+- Format PLINK output file to produce a sorted .bed file:
   
   ```
   awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed
   ```
-- 
+  
+- Find gene closest to each 'index' BMI variant in the .bed file:
+
+  ```
+  closest-features --closest BMI_vars.sort.bed GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
+  ```
