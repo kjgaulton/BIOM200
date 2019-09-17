@@ -30,7 +30,7 @@ The goal of this exercise is to identify potential pathogenic variants from huma
   Either download executable directly: 
   
   ```
-  wget https://github.com/brentp/vcfanno/releases/download/v0.3.2/vcfanno_linux64
+  wget https://github.com/brentp/vcfanno/releases/download/v0.3.2/vcfanno_linux64 -O vcfanno
   ```
   
   Or install with conda:
@@ -97,4 +97,4 @@ http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to reg
 
 **Questions:**
 1.  What pathways are enriched in genes near BMI-associated variants?
-2.  Which specific genes near BMI-associated variants are compelling targets for affecting BMI via these pathways  
+2.  Which specific genes near BMI-associated variants are compelling targets for affecting BMI via these pathways?
