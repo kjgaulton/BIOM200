@@ -24,9 +24,9 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
-- Exome VCF: ~/BIOM200/data/hu82436A.vcf.gz
+- **Exome VCF**: ~/BIOM200/data/hu82436A.vcf.gz
 
-  ClinVar VCF: ~/BIOM200/data/clinvar_20190909.vcf.gz
+  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
 
 - Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
@@ -44,7 +44,7 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 - Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output)
 
   ```
-  ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
+  ./vcfanno biom_config.toml ~/BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
 - This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
@@ -93,7 +93,7 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
 - Find gene closest to each 'index' BMI variant in the .bed file:
 
   ```
-  closest-features --closest BMI_vars.sort.bed BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
+  closest-features --closest BMI_vars.sort.bed ~/BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
   ```
   
 Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:
