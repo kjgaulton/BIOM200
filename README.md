@@ -13,7 +13,9 @@ Fall Quarter 2019
 
 Clone this repository into your home directory on TSCC, i.e.:
 
-```git clone https://github.com/kjgaulton/BIOM200.git```
+```
+git clone https://github.com/kjgaulton/BIOM200.git
+```
 
 <br/><br/>
 
@@ -27,17 +29,23 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 - Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
   
-  ``` wget https://github.com/brentp/vcfanno/releases/download/v0.3.2/vcfanno_linux64```
+  ```
+  wget https://github.com/brentp/vcfanno/releases/download/v0.3.2/vcfanno_linux64
+  ```
   
   Or install with conda:
   
-  ```conda install -c bioconda vcfanno```
+  ```
+  conda install -c bioconda vcfanno
+  ```
   
 - Copy ClinVar VCF clinvar_20190909.vcf.gz and index into your home directory from /oasis/tscc/scratch/kgaulton/
 
 - Run VCFanno to annotate exome with ClinVar using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output)
 
-  ```./vcfanno biom_config.toml hu82436A.vcf.gz > hu82436A.annot.vcf```
+  ```
+  ./vcfanno biom_config.toml hu82436A.vcf.gz > hu82436A.annot.vcf
+  ```
   
 - This will add several columns to the INFO field of the VCF in the annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
@@ -64,9 +72,13 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
   
 - Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
  
-  ```plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars```
+  ```
+  plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars
+  ```
   
 - Format PLINK output file to .bed format:
   
-  ```awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed```
+  ```
+  awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed
+  ```
 - 
