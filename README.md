@@ -25,6 +25,7 @@ git clone https://github.com/kjgaulton/BIOM200.git
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
 - Exome VCF: ~/BIOM200/data/hu82436A.vcf.gz
+
   ClinVar VCF: ~/BIOM200/data/clinvar_20190909.vcf.gz
 
 - Download VCFanno in order to functionally annotate variants
