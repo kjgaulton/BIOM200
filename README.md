@@ -58,7 +58,6 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
 - Download PLINK:
 
   ```wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190617.zip
-  
   unzip plink_linux_x86_64_20190617.zip```
   
 - Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
