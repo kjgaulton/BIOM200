@@ -43,8 +43,25 @@ The goal of this exercise is to identify potential pathogenic variants from huma
 
 From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' info tag)
 
-**Question**: How many rare, likely pathogenic variants does this individual carry? What genes are they in and what diseases do these variants cause?  
+**Questions**: 
+1.  How many rare, likely pathogenic variants does this individual carry? 
+2.  What types of variants are they (i.e. what changes do they make to the protein)? 
+3.  What genes are they in, and what diseases do these variants cause?  
 
 <br/><br/>
 ## Exercise - identify genes and pathways enriched in GWAS summary statistic data
-***
+
+The goal of this exercise is to take summary statistics from a GWAS of body-mass index (BMI), and identify genes and pathways enriched near significant BMI-associated loci.
+
+- Copy BMI summary data GIANT_BMI.tbl to your home directory from /oasis/tscc/scratch/kgaulton/
+
+- Download PLINK:
+  ```wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190617.zip```
+  ```unzip plink_linux_x86_64_20190617.zip```
+  
+- Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
+  ```plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars```
+  
+- Format PLINK output file to .bed format:
+  ```awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 > BMI_vars.bed```
+- 
