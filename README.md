@@ -92,7 +92,8 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
   closest-features --closest BMI_vars.sort.bed GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
   ```
   
-Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:(http://software.broadinstitute.org/gsea/msigdb/annotate.jsp)
+Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:
+http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to register with your email)
 
 **Questions:**
 1.  What pathways are enriched in genes near BMI-associated variants?
