@@ -41,10 +41,10 @@ The goal of this exercise is to identify potential pathogenic variants from huma
   conda install -c bioconda vcfanno
   ```
 
-- Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output)
+- Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
 
   ```
-  ./vcfanno biom_config.toml ~/BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
+  ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
 - This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
