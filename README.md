@@ -100,6 +100,6 @@ Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO)
 http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to register with your email)
 
 **Questions:**
-1.  What pathways are enriched in genes near BMI-associated variants?
-2.  Which specific genes near BMI-associated variants are compelling targets for affecting BMI via these pathways?
+1.  What pathways are enriched in genes near BMI-associated variants?  What does this potentially tell us about the biology underlying obesity?
+2.  Are there any specific genes near BMI-associated variants in these pathways with compelling biology or therapeutic value?
 3.  **BONUS**:  What are the drawbacks to this approach to annotating genes at disease-associated loci?
