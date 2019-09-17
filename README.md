@@ -24,6 +24,9 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
+- Exome VCF: ~/BIOM200/data/hu82436A.vcf.gz
+  ClinVar VCF: ~/BIOM200/data/clinvar_20190909.vcf.gz
+
 - Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
   
@@ -57,7 +60,7 @@ From this annotated VCF, find all variants with clinical_impact=Pathogenic, and 
 
 The goal of this exercise is to take summary statistics from a GWAS of body-mass index (BMI), and identify genes and pathways enriched near significant BMI-associated loci.
 
-- Copy BMI summary data GIANT_BMI.tbl to your home directory from /oasis/tscc/scratch/kgaulton/
+- BMI summary statistic data: /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl - copy into your home directory
 
   ```
   cp /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl ~
