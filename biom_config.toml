@@ -1,5 +1,5 @@
 [[annotation]]
-file="~/BIOM200/data/clinvar_20190909.vcf.gz"
+file="BIOM200/data/clinvar_20190909.vcf.gz"
 fields = ["CLNSIG", "AF_EXAC", "AF_TGP", "CLNVC", "GENEINFO"]
 ops=["self", "self", "self", "self", "self"]
 names=["clinical_significance","exac_allele_freq", "tgp_allele_freq", "clinical_class", "gene_info"]
