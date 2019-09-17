@@ -98,3 +98,4 @@ http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to reg
 **Questions:**
 1.  What pathways are enriched in genes near BMI-associated variants?
 2.  Which specific genes near BMI-associated variants are compelling targets for affecting BMI via these pathways?
+3.  **BONUS**:  What are the drawbacks to this approach to annotating genes at disease-associated loci?
