@@ -24,8 +24,6 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
-- Copy human exome VCF hu82436A.vcf.gz and index hu82436A.vcf.gz.tbi into your home directory from /oasis/tscc/scratch/kgaulton/
-
 - Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
   
@@ -38,16 +36,14 @@ The goal of this exercise is to identify potential pathogenic variants from huma
   ```
   conda install -c bioconda vcfanno
   ```
-  
-- Copy ClinVar VCF clinvar_20190909.vcf.gz and index into your home directory from /oasis/tscc/scratch/kgaulton/
 
-- Run VCFanno to annotate exome with ClinVar using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output)
+- Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output)
 
   ```
-  ./vcfanno biom_config.toml hu82436A.vcf.gz > hu82436A.annot.vcf
+  ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
-- This will add several columns to the INFO field of the VCF in the annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
+- This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
 From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' info tag)
 
@@ -62,6 +58,10 @@ From this annotated VCF, find all variants with clinical_impact=Pathogenic, and 
 The goal of this exercise is to take summary statistics from a GWAS of body-mass index (BMI), and identify genes and pathways enriched near significant BMI-associated loci.
 
 - Copy BMI summary data GIANT_BMI.tbl to your home directory from /oasis/tscc/scratch/kgaulton/
+
+  ```
+  cp /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl ~
+  ```
 
 - Download PLINK and BEDOPS:
 
@@ -89,7 +89,7 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
 - Find gene closest to each 'index' BMI variant in the .bed file:
 
   ```
-  closest-features --closest BMI_vars.sort.bed GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
+  closest-features --closest BMI_vars.sort.bed BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
   ```
   
 Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:
