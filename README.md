@@ -30,7 +30,7 @@ The Exome data you will annotate is here: **Exome VCF**: ~/BIOM200/data/hu82436A
 
 And you will annotate this exome using data on pathogenic variants from ClinVar:  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
 
-- Download VCFanno in order to functionally annotate variants
+Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
   
   ```
@@ -43,13 +43,13 @@ And you will annotate this exome using data on pathogenic variants from ClinVar:
   conda install -c bioconda vcfanno
   ```
 
-- Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
+Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
 
   ```
   ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
-- This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
+This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
 From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' info tag)
 
@@ -63,13 +63,13 @@ From this annotated VCF, find all variants with clinical_impact=Pathogenic, and 
 
 The goal of this exercise is to take summary statistics from a GWAS of body-mass index (BMI), and identify genes and pathways enriched near significant BMI-associated loci.
 
-- BMI summary statistic data: /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl - copy into your home directory
+BMI summary statistic data: /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl - copy into your home directory
 
   ```
   cp /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl ~
   ```
 
-- Download PLINK and BEDOPS:
+Download PLINK and BEDOPS:
 
   ```
   wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190617.zip
@@ -80,19 +80,19 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
   tar -xvf bunzip2 bedops_linux_x86_64-v2.4.36.tar
   ```
   
-- Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
+Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
  
   ```
   plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars
   ```
   
-- Format PLINK output file to produce a sorted .bed file:
+Format PLINK output file to produce a sorted .bed file:
   
   ```
   awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed
   ```
   
-- Find gene closest to each 'index' BMI variant in the .bed file:
+Find gene closest to each 'index' BMI variant in the .bed file:
 
   ```
   closest-features --closest BMI_vars.sort.bed ~/BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
