@@ -42,11 +42,19 @@ Download VCFanno in order to functionally annotate variants
   ```
   conda install -c bioconda vcfanno
   ```
+  
+  Make sure that you have permissions to run the program:
+  
+  ```
+  chmod +x vcfanno
+  ```
+  
+  
 
 Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
 
   ```
-  ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
+  ./vcfanno BIOM200/biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
 This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
@@ -82,8 +90,7 @@ Download PLINK and BEDOPS:
   unzip plink_linux_x86_64_20190617.zip
   
   wget https://github.com/bedops/bedops/releases/download/v2.4.36/bedops_linux_x86_64-v2.4.36.tar.bz2
-  bunzip2 bedops_linux_x86_64-v2.4.36.tar.bz2
-  tar -xvf bunzip2 bedops_linux_x86_64-v2.4.36.tar
+  tar -xvjf bunzip2 bedops_linux_x86_64-v2.4.36.tar
   ```
   
 Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
@@ -95,10 +102,10 @@ Use PLINK to extract genome-wide significant variants and run LD pruning to reta
 Format the PLINK output file 'BMI_vars.clumped' to produce a sorted .bed file and redirect to output file 'BMI_vars.bed':
   
   ```
-  awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed
+  awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.sort.bed
   ```
   
-Find gene closest to each 'index' BMI variant in the 'BMI_vars.bed' file and redirect to output file 'BMI_genes.txt':
+Find gene closest to each 'index' BMI variant in the 'BMI_vars.sort.bed' file and redirect to output file 'BMI_genes.txt':
 
   ```
   closest-features --closest BMI_vars.sort.bed ~/BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
