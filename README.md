@@ -11,6 +11,8 @@ Fall Quarter 2019
 
 ##  Getting started
 
+SSH into your account on TSCC (shh username@login-tscc.sdsc.edu)
+
 Clone this repository into your home directory on TSCC, i.e.:
 
 ```
@@ -24,9 +26,9 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
-- **Exome VCF**: ~/BIOM200/data/hu82436A.vcf.gz
+The Exome data you will annotate is here: **Exome VCF**: ~/BIOM200/data/hu82436A.vcf.gz
 
-  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
+And you will annotate this exome using data on pathogenic variants from ClinVar:  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
 
 - Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
