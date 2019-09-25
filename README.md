@@ -92,25 +92,25 @@ Use PLINK to extract genome-wide significant variants and run LD pruning to reta
   plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars
   ```
   
-Format PLINK output file to produce a sorted .bed file:
+Format the PLINK output file 'BMI_vars.clumped' to produce a sorted .bed file and redirect to output file 'BMI_vars.bed':
   
   ```
   awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.bed
   ```
   
-Find gene closest to each 'index' BMI variant in the .bed file:
+Find gene closest to each 'index' BMI variant in the 'BMI_vars.bed' file and redirect to output file 'BMI_genes.txt':
 
   ```
   closest-features --closest BMI_vars.sort.bed ~/BIOM200/data/GENCODE_V31.bed | awk '{ print $7 }' > BMI_genes.txt
   ```
   
-Using this list of genes, run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:
+Using this list of genes in 'BMI_genes.txt', run gene set enrichment analyses of Gene Ontology (GO) terms using GSEA:
 http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to register with your email)
 
 **Questions:**
 1.  What pathways are enriched in genes near BMI-associated variants?  What does this potentially tell us about the biology underlying obesity?
 2.  Are there any specific genes near BMI-associated variants in these pathways with compelling biology or therapeutic value?
-3.  **BONUS**:  What are the drawbacks to this approach to annotating genes at disease-associated loci?
+3.  **BONUS**:  What are the drawbacks to this approach to annotating genes at trait-associated loci?  What would be a better way to annotating genes affected by variants at these loci?
 
 
 ##  Potentially helpful commands
