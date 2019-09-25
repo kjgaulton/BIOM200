@@ -66,8 +66,14 @@ The goal of this exercise is to take summary statistics from a GWAS of body-mass
 BMI summary statistic data: /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl - copy into your home directory
 
   ```
-  cp /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl ~
+  cp /oasis/tscc/scratch/kgaulton/GIANT_BMI.tbl.gz ~
   ```
+
+Unzip the file:
+
+ ```
+ gunzip GIANT_BMI.tbl.gz
+ ```
 
 Download PLINK and BEDOPS:
 
