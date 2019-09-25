@@ -11,7 +11,7 @@ Fall Quarter 2019
 
 ##  Getting started
 
-SSH into your account on TSCC (shh username@login-tscc.sdsc.edu)
+SSH into your account on TSCC (ssh username@login-tscc.sdsc.edu)
 
 Clone this repository into your home directory on TSCC, i.e.:
 
