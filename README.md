@@ -51,7 +51,7 @@ Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele fre
   
 This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
-From this annotated VCF, find all variants with clinical_impact=Pathogenic, and not present in ExAC or 1000 Genomes (meaning theres is no 'exac_allele_freq' or 'tgp_allele_freq' info tag)
+From this annotated VCF, extract all variants with clinical_impact=Pathogenic, and determine whether or not they are also present in ExAC or 1000 Genomes and what their allele frequencies are (if there is no 'exac_allele_freq' or 'tgp_allele_freq' info tag then it isn't in these databases)
 
 **Questions**: 
 1.  How many rare, likely pathogenic variants does this individual carry? 
