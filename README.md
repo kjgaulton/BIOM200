@@ -26,12 +26,14 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
-The Exome data you will annotate is in the repository you cloned here: **Exome VCF**: ~/BIOM200/data/hu82436A.vcf.gz
+The Exome data you will annotate is in the repository you cloned here:  
+**Exome VCF**: `~/BIOM200/data/hu82436A.vcf.gz`
 
-And you will annotate this exome using data on pathogenic variants from ClinVar:  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
+And you will annotate this exome using data on pathogenic variants from ClinVar:  
+**ClinVar VCF**: `~/BIOM200/data/clinvar_20190909.vcf.gz`
 
 Download VCFanno in order to functionally annotate variants
-  Either download executable directly: 
+  Either download the executable directly: 
   
   ```
   wget https://github.com/brentp/vcfanno/releases/download/v0.3.2/vcfanno_linux64 -O vcfanno
@@ -43,12 +45,20 @@ Download VCFanno in order to functionally annotate variants
   conda install -c bioconda vcfanno
   ```
 
-Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
+Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when running this command
+
+*If you downloaded the executable directly, run this command:*
 
   ```
-  ./vcfanno biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
+  ./vcfanno biom_config.toml ~/BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
   ```
   
+ *If you installed VCFanno with conda, run this command instead:*
+ 
+  ```
+  vcfanno biom_config.toml ~/BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
+  ```
+ 
 This will add several columns to the INFO field of the VCF in the resulting annotated file 'hu82436A.annot.vcf', including: clinical_impact (benign, pathogenic, etc.), clinical_class (type of variant - snp, deletion, etc.), exac_allele_freq (allele frequency in ExAC), tgp_allele_freq (allele frequency in 1000 Genomes)
 
 From this annotated VCF, extract all variants with clinical_impact=Pathogenic, and determine whether or not they are also present in ExAC or 1000 Genomes and what their allele frequencies are (if there is no 'exac_allele_freq' or 'tgp_allele_freq' info tag then it isn't in these databases)
@@ -78,8 +88,7 @@ Unzip the file:
 Download PLINK and BEDOPS:
 
   ```
-  wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20190617.zip
-  unzip plink_linux_x86_64_20190617.zip
+  module load plink
   
   wget https://github.com/bedops/bedops/releases/download/v2.4.36/bedops_linux_x86_64-v2.4.36.tar.bz2
   bunzip2 bedops_linux_x86_64-v2.4.36.tar.bz2
@@ -115,10 +124,10 @@ http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to reg
 
 ##  Potentially helpful commands
 
-grep - extract information from a file 
+`grep` - extract information from a file 
 
-more - view beginning of a file (hit spacebar scroll through more)
+`more` - view beginning of a file (hit spacebar scroll through more)
 
-ls - list contents of a directory
+`ls` - list contents of a directory
 
 
