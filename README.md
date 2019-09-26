@@ -118,7 +118,7 @@ http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to reg
 
 **Questions:**
 1.  What pathways are enriched in genes near BMI-associated variants?  What does this potentially tell us about the biology underlying obesity?
-2.  Are there any specific genes near BMI-associated variants in these pathways with compelling biology or therapeutic value?
+2.  Are there any specific genes near BMI-associated variants in these pathways with compelling biology and/or involvement in monogenic obesity?
 3.  **BONUS**:  What are the drawbacks to this approach to annotating genes at trait-associated loci?  What would be a better way to annotating genes affected by variants at these loci?
 
 
