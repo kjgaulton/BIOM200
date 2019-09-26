@@ -26,9 +26,11 @@ git clone https://github.com/kjgaulton/BIOM200.git
 
 The goal of this exercise is to identify potential pathogenic variants from human exome sequencing.
 
-The Exome data you will annotate is in the repository you cloned here: **Exome VCF**: ~/BIOM200/data/hu82436A.vcf.gz
+The Exome data you will annotate is in the repository you cloned here:
+**Exome VCF**: `~/BIOM200/data/hu82436A.vcf.gz`
 
-And you will annotate this exome using data on pathogenic variants from ClinVar:  **ClinVar VCF**: ~/BIOM200/data/clinvar_20190909.vcf.gz
+And you will annotate this exome using data on pathogenic variants from ClinVar:  
+**ClinVar VCF**: `~/BIOM200/data/clinvar_20190909.vcf.gz`
 
 Download VCFanno in order to functionally annotate variants
   Either download executable directly: 
@@ -90,7 +92,7 @@ Download PLINK and BEDOPS:
   unzip plink_linux_x86_64_20190617.zip
   
   wget https://github.com/bedops/bedops/releases/download/v2.4.36/bedops_linux_x86_64-v2.4.36.tar.bz2
-  tar -xvjf bunzip2 bedops_linux_x86_64-v2.4.36.tar
+  tar -xvjf bedops_linux_x86_64-v2.4.36.tar.bz2
   ```
   
 Use PLINK to extract genome-wide significant variants and run LD pruning to retain one 'index' variant per locus: 
@@ -122,10 +124,10 @@ http://software.broadinstitute.org/gsea/msigdb/annotate.jsp (you may have to reg
 
 ##  Potentially helpful commands
 
-grep - extract information from a file 
+`grep` - extract information from a file 
 
-more - view beginning of a file (hit spacebar scroll through more)
+`more` - view beginning of a file (hit spacebar scroll through more)
 
-ls - list contents of a directory
+`ls` - list contents of a directory
 
 
