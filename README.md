@@ -54,7 +54,7 @@ Download VCFanno in order to functionally annotate variants
   
   
 
-Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when runnings this command
+Run VCFanno to annotate exome with ClinVar, and ExAC and 1000 Genomes allele frequencies, using config file 'biom_config.toml' (there might be several 'warnings' but should still produce the correct output).  Make sure you are in your home directory when running this command
 
   ```
   ./vcfanno BIOM200/biom_config.toml BIOM200/data/hu82436A.vcf.gz > hu82436A.annot.vcf
