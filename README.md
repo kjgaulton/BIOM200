@@ -33,6 +33,7 @@ And you will annotate this exome using data on pathogenic variants from ClinVar:
 **ClinVar VCF**: `~/BIOM200/data/clinvar_20190909.vcf.gz`
 
 Download VCFanno in order to functionally annotate variants
+  
   Either download executable directly: 
   
   ```
