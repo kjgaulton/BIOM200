@@ -102,7 +102,7 @@ Use PLINK to extract genome-wide significant variants and run LD pruning to reta
   plink --bfile /oasis/tscc/scratch/kgaulton/hapmap_CEU --clump GIANT_BMI.tbl --clump-p1 .00000005 --clump-r2 .5 --out BMI_vars
   ```
   
-Format the PLINK output file 'BMI_vars.clumped' to produce a sorted .bed file and redirect to output file 'BMI_vars.bed':
+Format the PLINK output file 'BMI_vars.clumped' to produce a sorted .bed file and redirect to output file 'BMI_vars.sort.bed':
   
   ```
   awk -v OFS='\t' '{ print "chr"$1,$4,$4,$3 }' BMI_vars.clumped | head -n -2 | sort -k1,1 -k2,2g > BMI_vars.sort.bed
